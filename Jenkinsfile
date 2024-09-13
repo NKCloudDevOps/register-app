@@ -15,7 +15,7 @@ pipeline {
 
        stage ("Code Checkout") {
          steps {
-            git branch: 'main', credentialsid: 'github', url: 'https://github.com/NKCloudDevOps/register-app'
+            git branch: 'main', url: 'https://github.com/NKCloudDevOps/register-app'
                            
          }
        }
