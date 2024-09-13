@@ -7,37 +7,29 @@ pipeline {
   }
 
   stages {
-       stage (Cleanup Workspace)
+       stage (Cleanup Workspace) {
          steps {
            cleanws()           
          } 
+       }
 
-       stage (Code Checkout)
+       stage (Code Checkout) {
          steps {
             git branch: 'main', credentialsid: 'github', url: 'https://github.com/NKCloudDevOps/register-app'
-                            
+                           
          }
+       }
 
-       stage (Build Application)
+       stage (Build Application) {
          steps {
             sh "mvn clean package"           
          }
+       }
 
-       stage (Test Application)
+       stage (Test Application) {
          steps {
            sh "mvc test"
          }
-    
+       }
+   }
   }
-
-
-
-
-
-
-
-
-
-
-
-}
