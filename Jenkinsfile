@@ -28,7 +28,7 @@ pipeline {
 
        stage ("Test Application") {
          steps {
-           sh "mvc test"
+           sh "mvn test"
          }
        }
    }
